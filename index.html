@@ -355,24 +355,28 @@ showSlide();
 },5000);
 }
 <script>
-    // Your original slideshow music code
-    var music2 = document.getElementById("music2");
-    music2.play().catch(() => {
-        console.log("Autoplay blocked; click button to start.");
-    });
+   // Optional: start slideshow music automatically
+   var music2 = document.getElementById("music2");
+   music2.play().catch(() => {
+       console.log("Autoplay blocked; click button to start.");
+   });
 
-    // Add this code right after your original code
-    document.getElementById("playFinalMusic").addEventListener("click", function() {
-        music2.pause();
-        music2.currentTime = 0;
-        var finalMusic = document.getElementById("finalMusic");
-        finalMusic.play();
-        this.style.display = "none";
-    });
+   // Final music button functionality
+   document.getElementById("playFinalMusic").addEventListener("click", function() {
+       // Stop slideshow music
+       music2.pause();
+      music2.currentTime = 0; // reset to start
+     // Play final music
+      var finalMusic = document.getElementById("finalMusic");
+      finalMusic.play();
+     // Hide button after click
+      this.style.display = "none";
+  });
 
 </script>
 
 </body>
 </html>
+
 
 
