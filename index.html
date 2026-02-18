@@ -354,15 +354,22 @@ return;
 showSlide();
 },5000);
 }
-// Final music button
-document.getElementById("playFinalMusic").addEventListener("click", function() {
-    music2.pause(); // stop slideshow music
-    music2.currentTime = 0; // optional: reset to start
-    document.getElementById("finalMusic").play(); // play final music
-    this.style.display = "none"; // hide button after click
-});
+ // Final music button functionality
+        document.getElementById("playFinalMusic").addEventListener("click", function() {
+            // Stop slideshow music
+            music2.pause();
+            music2.currentTime = 0; // reset to start
+
+            // Play final music
+            var finalMusic = document.getElementById("finalMusic");
+            finalMusic.play();
+
+            // Hide button after click
+            this.style.display = "none";
+       });
 
 </script>
 
 </body>
 </html>
+
